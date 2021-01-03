@@ -1,0 +1,16 @@
+﻿@using My_Blog.Models
+@model Users
+
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+<div class="text-center card">
+    <h1 class="display-4">Welcome @Model.Name</h1>
+    <h2 class="navbar-brand display-3">Email: @Model.Email</h2>
+    <h2 class="navbar-brand display-3">Gender: @Model.Gender</h2>
+
+</div>
+<br />
+<div class="text-center">
+    <a href="/Home/Edit" class="btn btn-outline-dark">Edit Profile</a>
+
+</div>

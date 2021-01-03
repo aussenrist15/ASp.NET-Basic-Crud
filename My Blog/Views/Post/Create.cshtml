@@ -1,0 +1,27 @@
+﻿@using My_Blog.Models
+@model Posts
+
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+<div class="text-center">
+    <h3 class="display-4">Create A Post</h3>
+</div>
+
+<div class="card">
+    <form class="p-3" method="post" action="/Post/Create">
+        <div class="form-group">
+            <label for="pwd">Title:</label>
+            <input type="text" class="form-control" id="usr" asp-for="Title">
+            <span class="text-danger" id="errTitle"></span>
+
+        </div>
+
+        <label class="text-black-50">Comment:</label>
+        <textarea class="form-control" rows="5" id="body" asp-for="Body"></textarea>
+        <span id="errBody" class="text-danger"></span>
+        <br />
+
+        <button type="submit" class="btn btn-dark" >Create</button>
+
+    </form>
+    <a class=" btn btn-outline-dark" style="width:7%; margin-left:14px; margin-bottom:10px" href="/Home/Profile">Cancel</a>
+</div>

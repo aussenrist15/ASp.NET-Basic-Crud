@@ -1,0 +1,34 @@
+﻿@using My_Blog.Models
+@model List<Posts>
+
+@{ Layout = "~/Views/Shared/_Layout.cshtml"; }
+<div class="text-center">
+    <h3 class="display-4">My Posts</h3> <br />
+    <a href="/Post/Create" class="btn btn-dark">Create Post</a>
+</div>
+
+<br />
+@if (Model != null) {
+    foreach (Posts posts in Model) {
+        <div class="card">
+            <div class="card-body">
+                <div class="card-header bg-dark text-white">
+                    <h1 class="display-4 card-title">@posts.Title</h1>
+                    <p class="mr-2 card-subtitle">By @posts.Owner</p>
+                </div>
+                <div class="card-body">
+                    <p>@posts.Body</p>
+                </div>
+            </div>
+            <div class="card-footer bg-white">
+                <a href="/Post/Edit/@posts.ID" class="btn btn-info">Edit</a>
+                <a href="/Post/Delete/@posts.ID" class="btn btn-danger">Delete</a>
+
+            </div>
+        </div>
+    }
+} else {
+    <div class="text-center">
+        <h1 class="display-4">There are no posts to show yet</h1>
+    </div>
+}
